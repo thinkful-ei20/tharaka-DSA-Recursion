@@ -8,21 +8,11 @@ const arrayDouble = function(array) {
         return [];
     }
 
-    let newArry = [];
-    newArry.push(array[0] * 2);
-    // newArry.push("");
-    // isArr = Object.prototype.toString.call(newArry) == '[object Array]';
-    // console.log(isArr);
-
     //calling itself
-    return newArry + arrayDouble(array.slice(1));
+    return [(array[0]*2),...arrayDouble(array.slice(1)) ];
 }
 
 
-let numbers = [2, 3, 6];
-// isArr = Object.prototype.toString.call(numbers) == '[object Array]';
-// console.log(isArr);
-console.log(arrayDouble(numbers));
 
 //Iteratively
 const arrayDoubleIterative = function(array) {
@@ -34,5 +24,10 @@ const arrayDoubleIterative = function(array) {
 
     return newArry;
 }   
+
+
+let numbers = [2, 3, 6];
+
+console.log(arrayDouble(numbers));
 
 console.log(arrayDoubleIterative(numbers));
